@@ -11,7 +11,7 @@ RUN curl -fsSL https://downloads.lightbend.com/scala/2.13.14/scala-2.13.14.tgz -
     rm scala.tgz
 
 WORKDIR /app
-COPY src ./src
-RUN mkdir -p out && scalac -d out src/Main.scala
+COPY Main.Scala ./
+RUN mkdir -p out && scalac -d out Main.Scala
 
 CMD ["scala", "-cp", "out", "Main"]
